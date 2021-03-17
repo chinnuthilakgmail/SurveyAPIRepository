@@ -1,0 +1,31 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[tblAnswers] (Table)
+       [dbo].[tblOptions] (Table)
+       [dbo].[tblPerson] (Table)
+       [dbo].[tblQuestions] (Table)
+       [dbo].[tblQuestionType] (Table)
+       [dbo].[tblSurvey] (Table)
+       [dbo].[tblSurveyQuestionMapping] (Table)
+       Foreign Key: unnamed constraint on [dbo].[tblAnswers] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[tblAnswers] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[tblAnswers] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[tblAnswers] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[tblOptions] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[tblQuestions] (Foreign Key)
+       [dbo].[uspCloseSurvey] (Procedure)
+       [dbo].[uspCreateSurvey] (Procedure)
+       [dbo].[uspDeleteSurvey] (Procedure)
+       [dbo].[uspUpdateSurvey] (Procedure)
+
+** Supporting actions

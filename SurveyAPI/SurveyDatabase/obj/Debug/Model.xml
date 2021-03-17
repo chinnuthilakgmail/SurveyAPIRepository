@@ -1,0 +1,2338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="SurveyDatabase.dll" />
+			<Metadata Name="FileName" Value="C:\USERS\SWATHI ARUN\SOURCE\REPOS\SURVEYAPI\SURVEYDATABASE\OBJ\DEBUG\SURVEYDATABASE.DLL" />
+			<Metadata Name="AssemblyName" Value="SurveyDatabase" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\obj\Debug\SurveyDatabase.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[tblAnswers].[SurveyId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblAnswers]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[tblSurvey]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[tblAnswers].[QuestionId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblAnswers]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[tblAnswers].[OptionId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblAnswers]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[tblOptions].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[tblOptions]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[tblAnswers].[PersonId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblAnswers]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[tblPerson].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[tblPerson]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[tblOptions].[QuestionId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblOptions]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[QuestionType]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[tblQuestionType]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[tblAnswers].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblAnswers]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[tblOptions].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblOptions]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[tblPerson].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblPerson]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[tblQuestionType].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblQuestionType]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[tblQuestions].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[tblSurvey].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblSurvey]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_tblSurveyQuestionMapping]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[tblSurveyQuestionMapping].[SurveyId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[tblAnswers]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblAnswers].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="9" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblAnswers].[SurveyId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblAnswers].[QuestionId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="4" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblAnswers].[OptionId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="5" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblAnswers].[AnswerText]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblAnswers].[PersonId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="6" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[tblOptions]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblOptions].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="10" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblOptions].[QuestionId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="7" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblOptions].[OptionText]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[tblPerson]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblPerson].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="11" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblPerson].[Name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblPerson].[EmailId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="300" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[tblQuestions]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblQuestions].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="13" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblQuestions].[Question]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblQuestions].[QuestionType]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="8" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[tblQuestionType]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblQuestionType].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="12" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblQuestionType].[QuestionType]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblQuestionType].[IsOptionsRequired]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[tblSurvey]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblSurvey].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="14" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblSurvey].[Title]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblSurvey].[Description]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblSurvey].[StartDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblSurvey].[EndDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblSurvey].[IsOpen]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[tblSurveyQuestionMapping]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblSurveyQuestionMapping].[SurveyId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblSurveyQuestionMapping].[QuestionId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[tblSurveyQuestionMapping].[QuestionNumber]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="15" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspCloseSurvey]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DECLARE @Count INT = 0
+	SELECT @Count = COUNT(*) FROM tblSurvey WHERE Id = @Id
+IF @Count > 0
+	BEGIN
+		UPDATE tblSurvey SET IsOpen = 0 WHERE Id = @Id
+		RETURN 1
+	END
+ELSE	
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCloseSurvey].[@Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[IsOpen]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCloseSurvey].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="243" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspCloseSurvey]&#xD;&#xA;&#x9;@Id int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspCreateQuestion]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+DECLARE @Count INT = 0
+SET @QuestionId = 0
+SELECT @Count = COUNT(*) FROM tblQuestionType WHERE Id = @TypeId
+
+IF @Count > 0
+BEGIN
+	INSERT INTO tblQuestions (Question,QuestionType) VALUES (@Question,@TypeId)
+	SET @QuestionId = SCOPE_IDENTITY()
+
+	INSERT INTO tblSurveyQuestionMapping (QuestionId,SurveyId,QuestionNumber) VALUES (@QuestionId,@SurveyId,@QuestionNumber)
+	RETURN 1
+END
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateQuestion].[@QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateQuestion].[@TypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Question]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[QuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateQuestion].[@Question]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[SurveyId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateQuestion].[@SurveyId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateQuestion].[@QuestionNumber]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateQuestion].[@Question]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateQuestion].[@TypeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateQuestion].[@SurveyId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateQuestion].[@QuestionNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateQuestion].[@QuestionId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="555" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspCreateQuestion]&#xD;&#xA;&#x9;@Question  nvarchar(MAX),&#xD;&#xA;&#x9;@TypeId int,&#xD;&#xA;&#x9;@SurveyId int,&#xD;&#xA;&#x9;@QuestionNumber int,&#xD;&#xA;&#x9;@QuestionId INT OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspCreateSurvey]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+
+DECLARE @Count INT = 0
+SET @SurveyId = 0
+SELECT @Count = COUNT(*) FROM tblSurvey WHERE Title = @Title
+IF @Count = 0
+BEGIN
+	INSERT INTO tblSurvey(Title,Description,StartDate,EndDate,IsOpen) VALUES (@Title,@Description,@StartDate,@EndDate,@IsOpen)
+	SET @SurveyId = SCOPE_IDENTITY()
+	RETURN 1
+END
+ELSE	 
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateSurvey].[@SurveyId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Title]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateSurvey].[@Title]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[StartDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[EndDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[IsOpen]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateSurvey].[@Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateSurvey].[@StartDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateSurvey].[@EndDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspCreateSurvey].[@IsOpen]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateSurvey].[@Title]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateSurvey].[@Description]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateSurvey].[@StartDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateSurvey].[@EndDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateSurvey].[@IsOpen]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspCreateSurvey].[@SurveyId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="503" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspCreateSurvey]&#xD;&#xA;&#x9;@Title nvarchar(200),&#xD;&#xA;&#x9;@Description nvarchar(MAX),&#xD;&#xA;&#x9;@StartDate datetime,&#xD;&#xA;&#x9;@EndDate datetime,&#xD;&#xA;&#x9;@IsOpen bit,&#xD;&#xA;&#x9;@SurveyId int output&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspDeleteOptions]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DELETE tblOptions WHERE QuestionId = @QuestionId
+RETURN 1]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[tblOptions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspDeleteOptions].[@QuestionId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspDeleteOptions].[@QuestionId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="126" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspDeleteOptions]&#xD;&#xA;&#x9;@QuestionId int  &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspDeleteQuestion]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DELETE tblOptions WHERE QuestionId = @QuestionId
+	DELETE tblSurveyQuestionMapping WHERE QuestionId = @QuestionId
+	DELETE tblQuestions WHERE Id = @QuestionId
+RETURN 1]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[tblOptions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspDeleteQuestion].[@QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspDeleteQuestion].[@QuestionId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="237" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspDeleteQuestion]&#xD;&#xA;&#x9;@QuestionId int  &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspDeleteSurvey]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+		DECLARE @Count INT = 0
+	SELECT @Count = COUNT(*) FROM tblSurvey WHERE Id = @Id
+IF @Count > 0
+	BEGIN
+		DELETE tblSurvey WHERE Id = @Id
+		RETURN 1
+	END
+ELSE	
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspDeleteSurvey].[@Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspDeleteSurvey].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="230" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspDeleteSurvey]&#xD;&#xA;&#x9;@Id int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspGetAllQuestionTypes]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT Id,QuestionType,IsOptionsRequired FROM tblQuestionType
+RETURN 1]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[tblQuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[QuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[IsOptionsRequired]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="129" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspGetAllQuestionTypes]&#xD;&#xA;&#x9; &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspGetSurveyDetails]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT s.Id as SurveyId, s.Title as SurveyTitle,s.Description as SurveyDescription,
+		--s.StartDate as SurveyStartDate,s.EndDate as SurveyEndDate,
+		m.QuestionNumber as QuestionNumber,
+		s.IsOpen as IsOpen,
+		q.Id as QuestionId,q.Question as Question,
+		t.Id as QuestionTypeId,t.QuestionType as QuestionType,t.IsOptionsRequired as IsOptionsRequired,
+		o.Id as OptionId,o.OptionText as OptionText
+		
+	FROM tblSurvey s
+	LEFT OUTER JOIN tblSurveyQuestionMapping m ON s.Id = m.SurveyId
+	LEFT OUTER JOIN tblQuestions q ON q.Id = m.QuestionId
+	LEFT OUTER JOIN tblQuestionType t ON t.Id = q.QuestionType
+	LEFT OUTER JOIN tblOptions o ON o.QuestionId = m.QuestionId
+
+	WHERE CONVERT(date, s.StartDate) <= CONVERT(date, GETDATE())
+	AND CONVERT(date,s.EndDate) >= CONVERT(date,GETDATE())
+	AND s.IsOpen = 1
+	AND s.Id = @SurveyId
+RETURN 1]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[tblSurvey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[SurveyId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[QuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Title]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[IsOpen]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Question]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[QuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[IsOptionsRequired]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions].[OptionText]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[StartDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[EndDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[IsOpen]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspGetSurveyDetails].[@SurveyId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspGetSurveyDetails].[@SurveyId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="912" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspGetSurveyDetails]&#xD;&#xA;&#x9;@SurveyId int  &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspSaveAnswer]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+DECLARE @Count INT = 0
+DECLARE @PersonId INT = 0
+DECLARE @IsOptionRequired BIT =0
+--Get person Id
+SELECT @PersonId = Id FROM tblPerson WHERE EmailId = @PersonEmail
+IF @PersonId IS NULL OR @PersonId = 0
+BEGIN
+	INSERT INTO tblPerson (EmailId,Name) VALUES (@PersonEmail,@PersonName)
+	SET @PersonId = SCOPE_IDENTITY()
+END
+
+--Check If Question, survey exists
+SELECT @Count = COUNT(*) FROM tblSurveyQuestionMapping WHERE QuestionId = @QuestionId AND SurveyId = @SurveyId
+IF @Count > 0
+BEGIN
+	SELECT @IsOptionRequired = IsOptionsRequired FROM tblQuestionType  WHERE Id = 
+	(SELECT QuestionType FROM tblQuestions WHERE Id = @QuestionId)
+	IF @IsOptionRequired = 1
+	BEGIN
+	--Check if option exists
+		SELECT @Count = COUNT(*) FROM tblOptions WHERE Id = @OptionId AND QuestionId = @QuestionId
+		IF @Count > 0
+		BEGIN
+			--Save Option
+			INSERT INTO tblAnswers (AnswerText,OptionId,PersonId,QuestionId,SurveyId) VALUES (NULL,@OptionId,@PersonId,@QuestionId,@SurveyId)
+			RETURN 1 --Success
+		END
+		ELSE
+		RETURN 2 --No Option Available
+	END
+	ELSE
+	BEGIN
+		--Save Answer
+		INSERT INTO tblAnswers (AnswerText,OptionId,PersonId,QuestionId,SurveyId) VALUES (@Answer,0,@PersonId,@QuestionId,@SurveyId)
+		RETURN 1 --Success
+	END
+END
+RETURN 0 -- qstn or survey does not exist]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblPerson]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblPerson].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblPerson].[EmailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveAnswer].[@PersonEmail]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblPerson].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveAnswer].[@PersonName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveAnswer].[@QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[SurveyId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveAnswer].[@SurveyId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[IsOptionsRequired]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[QuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveAnswer].[@OptionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblAnswers]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblAnswers].[AnswerText]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblAnswers].[OptionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblAnswers].[PersonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblAnswers].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblAnswers].[SurveyId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveAnswer].[@Answer]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveAnswer].[@SurveyId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveAnswer].[@QuestionId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveAnswer].[@OptionId]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveAnswer].[@Answer]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveAnswer].[@PersonName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveAnswer].[@PersonEmail]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="300" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1482" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspSaveAnswer]&#xD;&#xA;&#x9;@SurveyId int,&#xD;&#xA;&#x9;@QuestionId int,&#xD;&#xA;&#x9;@OptionId int =0,&#xD;&#xA;&#x9;@Answer nvarchar(MAX) = NULL,&#xD;&#xA;&#x9;@PersonName nvarchar(200),&#xD;&#xA;&#x9;@PersonEmail nvarchar(300)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspSaveOption]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+ DECLARE @IsRequired BIT = 0
+ --Check if Options required
+  SELECT @IsRequired =  IsOptionsRequired FROM tblQuestionType  WHERE Id = 
+	(SELECT QuestionType FROM tblQuestions WHERE Id = @QuestionId)
+
+IF @IsRequired = 1
+BEGIN
+	INSERT INTO tblOptions (OptionText,QuestionId) VALUES (@OptionText,@QuestionId)
+	RETURN 1
+END
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[IsOptionsRequired]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[QuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveOption].[@QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions].[OptionText]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblOptions].[QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveOption].[@OptionText]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveOption].[@OptionText]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveOption].[@QuestionId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="428" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspSaveOption]&#xD;&#xA;&#x9;@OptionText nvarchar(500),&#xD;&#xA;&#x9;@QuestionId int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspSaveQuestionType]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+DECLARE @Count INT = 0
+SELECT @Count = COUNT(*) FROM tblQuestionType WHERE QuestionType = @QuestionType
+IF @Count = 0
+BEGIN
+	INSERT INTO tblQuestionType (QuestionType,IsOptionsRequired) VALUES (@QuestionType,@IsOptionsRequired)
+	RETURN 1
+END
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[QuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveQuestionType].[@QuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[IsOptionsRequired]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspSaveQuestionType].[@IsOptionsRequired]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveQuestionType].[@QuestionType]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspSaveQuestionType].[@IsOptionsRequired]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="364" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspSaveQuestionType]&#xD;&#xA;&#x9;@QuestionType nvarchar(200) ,&#xD;&#xA;&#x9;@IsOptionsRequired bit&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspUpdateQuestion]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+DECLARE @Count INT = 0
+ 
+SELECT @Count = COUNT(*) FROM tblQuestionType WHERE Id = @TypeId
+
+IF @Count > 0
+BEGIN
+	UPDATE tblQuestions SET Question=@Question,QuestionType=@TypeId 
+	WHERE Id=@QuestionId	 
+
+	UPDATE tblSurveyQuestionMapping SET  SurveyId =@SurveyId ,QuestionNumber=@QuestionNumber 
+	WHERE QuestionId = @QuestionId
+	RETURN 1
+END
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestionType].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateQuestion].[@TypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Question]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateQuestion].[@Question]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[QuestionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblQuestions].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateQuestion].[@QuestionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[SurveyId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateQuestion].[@SurveyId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateQuestion].[@QuestionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurveyQuestionMapping].[QuestionId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateQuestion].[@QuestionId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateQuestion].[@Question]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateQuestion].[@TypeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateQuestion].[@SurveyId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateQuestion].[@QuestionNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="509" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspUpdateQuestion]&#xD;&#xA;&#x9;@QuestionId int,&#xD;&#xA;&#x9;@Question  nvarchar(MAX),&#xD;&#xA;&#x9;@TypeId int,&#xD;&#xA;&#x9;@SurveyId int,&#xD;&#xA;&#x9;@QuestionNumber int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[uspUpdateSurvey]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DECLARE @Count INT = 0
+SELECT @Count = COUNT(*) FROM tblSurvey WHERE Id = @Id
+IF @Count > 0
+BEGIN
+	UPDATE tblSurvey SET Title=@Title, Description=@Description, StartDate=@StartDate, EndDate=@EndDate, IsOpen=@IsOpen
+	WHERE Id = @Id
+	RETURN 1
+END
+ELSE	 
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateSurvey].[@Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Title]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateSurvey].[@Title]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateSurvey].[@Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[StartDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateSurvey].[@StartDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[EndDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateSurvey].[@EndDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[tblSurvey].[IsOpen]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[uspUpdateSurvey].[@IsOpen]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateSurvey].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateSurvey].[@Title]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateSurvey].[@Description]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateSurvey].[@StartDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateSurvey].[@EndDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[uspUpdateSurvey].[@IsOpen]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="439" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[uspUpdateSurvey]&#xD;&#xA;&#x9;@Id int,&#xD;&#xA;&#x9;@Title nvarchar(200),&#xD;&#xA;&#x9;@Description nvarchar(MAX),&#xD;&#xA;&#x9;@StartDate datetime,&#xD;&#xA;&#x9;@EndDate datetime,&#xD;&#xA;&#x9;@IsOpen bit&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+	</Model>
+</DataSchemaModel>

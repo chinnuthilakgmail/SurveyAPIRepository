@@ -1,0 +1,9 @@
+C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\bin\Debug\SurveyDatabase.dacpac
+C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\bin\Debug\SurveyDatabase.dll
+C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\bin\Debug\SurveyDatabase.pdb
+C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\obj\Debug\SurveyDatabase.dll
+C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\obj\Debug\SurveyDatabase.pdb
+C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\obj\Debug\Model.xml
+C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\obj\Debug\refactor.xml
+C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\obj\Debug\postdeploy.sql
+C:\Users\Swathi Arun\source\repos\SurveyAPI\SurveyDatabase\obj\Debug\predeploy.sql
